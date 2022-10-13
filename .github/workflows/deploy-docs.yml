@@ -3,7 +3,7 @@ name: Deploy Storybook
 on:
   push: 
     branches: 
-      - main
+      - master
 
 jobs: 
   build-and-deploy:
@@ -19,7 +19,7 @@ jobs:
           node-version: 16
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build Storybook      
         run: npm run build-storybook
