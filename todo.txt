@@ -1,0 +1,13 @@
+[ ] Criar nova a página Esqueceu a senha no figma
+[ ] Criar nova a página Register no figma
+[ ] Criar o Readme
+[ ] Criar a License
+[ ] Colocar os componentes em pastas separadas
+[ ] Fazer os testes nos componentes
+[ ] Colocar as páginas em pastas separadas
+[ ] Criar a página de Esqueceu a senha
+[ ] Criar o storybook da página Esqueceu a senha
+[ ] Fazer os testes na página Esqueceu a senha
+[ ] Criar a página Register
+[ ] Criar o storybook da página Register
+[ ] Criar os testes na página Register
