@@ -71,6 +71,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para obter mais detalhes.
 
-```
+---
 
 <p align='center'>Criado by Rayanne Ramos</p>
