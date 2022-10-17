@@ -18,6 +18,7 @@ export const Default: StoryObj<ButtonProps> = {
     userEvent.click(canvas.getByRole('button'));
 
     await waitFor(() => {
+      expect(canvas.getByText('create account')).toBeInTheDocument();
       expect(canvas.getAllByRole('button')).toBeInTheDocument();
     });
   },
