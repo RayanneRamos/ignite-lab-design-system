@@ -11,9 +11,5 @@ export default {
   argTypes: {}, 
 } as Meta<ButtonProps>
 
-export const Default: StoryObj<ButtonProps> = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    userEvent.click(canvas.getByRole('button'));
-  },
-};
+export const Default: StoryObj<ButtonProps> = {};
+
