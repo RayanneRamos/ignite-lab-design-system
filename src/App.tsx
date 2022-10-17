@@ -1,10 +1,11 @@
-import { ForgotPassword } from './pages/ForgotPassword/ForgotPassword';
+//import { ForgotPassword } from './pages/ForgotPassword/ForgotPassword';
 //import { SignIn } from './pages/SignIn/SignIn';
+import { ChangePassword } from './pages/ChangePassword/ChangePassword';
 import './styles/global.css';
 
 function App() {
   return (
-    <ForgotPassword />
+    <ChangePassword />
   );
 }
 
