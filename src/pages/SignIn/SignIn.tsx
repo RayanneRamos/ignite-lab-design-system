@@ -12,15 +12,15 @@ import { Logo } from '../../components/Logo/Logo';
 function SignIn() {
   const [ isUserSignedIn, setIsUserSignedIn ] = useState(false);
   const navigate = useNavigate();
-  
+
   async function handleSignIn(event: FormEvent) {
     event.preventDefault();
 
     await axios.post('/sessions', {
-      email: 'rayanneramos@gmail.com',
+      email: 'johndoe@example.com',
       password: '123456789',
     });
-
+    
     setIsUserSignedIn(true);
     navigate('/');
   }

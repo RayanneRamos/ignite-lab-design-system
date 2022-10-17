@@ -16,7 +16,7 @@ function ForgotPassword() {
     event.preventDefault();
 
     await axios.post('/forgotpassword', {
-      email: 'rayanneramos@gmail.com',
+      email: 'johndoe@example.com',
     });
 
     setIsUserForgotPassword(true);
