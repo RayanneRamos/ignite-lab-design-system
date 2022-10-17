@@ -33,7 +33,7 @@ function ChangePassword() {
         </Text>
       </header>
       <form onSubmit={handleChangePassword} className="flex flex-col items-stretch w-full max-w-sm mt-10 gap-4">
-        { isUserChangePassword && <Text>Nova senha criada com sucesso.</Text> }
+        { isUserChangePassword && <Text>Nova senha criada com sucesso!</Text> }
         <label htmlFor="password" className="flex flex-col gap-3">
           <Text className="font-semibold">Nova senha</Text>
           <TextInput.Root>

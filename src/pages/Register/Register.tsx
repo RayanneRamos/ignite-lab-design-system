@@ -33,7 +33,7 @@ function Register() {
           Crie uma conta e comece a usar!
         </Text>
       </header>
-      <form className="flex flex-col items-stretch w-full max-w-sm mt-10 gap-4">
+      <form onSubmit={handleRegister} className="flex flex-col items-stretch w-full max-w-sm mt-10 gap-4">
         { isUserRegister && <Text>Conta criada com sucesso!</Text> }
         <label htmlFor="email" className="flex flex-col gap-3">
           <Text className="font-semibold">Endereço de e-mail</Text>

@@ -32,7 +32,7 @@ function ForgotPassword() {
         </Text>
       </header>
       <form onSubmit={handleForgotPassword} className="flex flex-col items-stretch w-full max-w-sm mt-10 gap-4">
-        { isUserForgotPassword && <Text>Link enviado com sucesso.</Text> }
+        { isUserForgotPassword && <Text>Link enviado com sucesso!</Text> }
         <label htmlFor='email' className="flex flex-col gap-3">
           <Text className="font-semibold">Endereço de e-mail cadastrado</Text>
           <TextInput.Root>
