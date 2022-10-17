@@ -76,4 +76,4 @@ function Register() {
   );
 }
 
-export { Register }
+export { Register };
