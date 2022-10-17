@@ -1,4 +1,6 @@
+import axios from "axios";
 import { Envelope, Lock } from "phosphor-react";
+import { FormEvent, useState } from "react";
 import { Button } from "../../components/Button/Button";
 import { Heading } from "../../components/Heading/Heading";
 import { Logo } from "../../components/Logo/Logo";
@@ -6,6 +8,20 @@ import { Text } from "../../components/Text/Text";
 import { TextInput } from "../../components/TextInput/TextInput";
 
 function Register() {
+  const [ isUserRegister, setIsUserRegister ] = useState(false);
+
+  async function handleRegister(event: FormEvent) {
+    event.preventDefault();
+
+    await axios.post('/register', {
+      email: 'johndoe@example.com',
+      password: '123456789',
+      confirmPassword: '123456789',
+    });
+
+    setIsUserRegister(true);
+  }
+
   return (
     <div className="w-screen h-screen bg-gray-900 flex items-center justify-center text-gray-100 flex-col">
       <header className="flex flex-col items-center">
@@ -18,6 +34,7 @@ function Register() {
         </Text>
       </header>
       <form className="flex flex-col items-stretch w-full max-w-sm mt-10 gap-4">
+        { isUserRegister && <Text>Conta criada com sucesso!</Text> }
         <label htmlFor="email" className="flex flex-col gap-3">
           <Text className="font-semibold">Endereço de e-mail</Text>
           <TextInput.Root>
