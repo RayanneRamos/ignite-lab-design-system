@@ -1,4 +1,5 @@
 import { FormEvent, useState } from 'react';
+import axios from 'axios';
 import { Envelope, Lock } from "phosphor-react";
 import { Checkbox } from '../../components/Checkbox/Checkbox';
 import { Button } from '../../components/Button/Button';
@@ -6,8 +7,6 @@ import { Heading } from '../../components/Heading/Heading';
 import { Text } from '../../components/Text/Text';
 import { TextInput } from '../../components/TextInput/TextInput';
 import { Logo } from '../../components/Logo/Logo';
-
-import axios from 'axios';
 
 function SignIn() {
   const [ isUserSignedIn, setIsUserSignedIn ] = useState(false);
