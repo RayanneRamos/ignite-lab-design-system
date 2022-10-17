@@ -1,5 +1,6 @@
 import { FormEvent, useState } from 'react';
 import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom';
 import { Envelope } from "phosphor-react";
 import { Button } from "../../components/Button/Button";
 import { Heading } from "../../components/Heading/Heading";
@@ -9,6 +10,7 @@ import { TextInput } from "../../components/TextInput/TextInput";
 
 function ForgotPassword() {
   const [ isUserForgotPassword, setIsUserForgotPassword ] = useState(false);
+  const navigate = useNavigate();
 
   async function handleForgotPassword(event: FormEvent) {
     event.preventDefault();
@@ -18,6 +20,7 @@ function ForgotPassword() {
     });
 
     setIsUserForgotPassword(true);
+    navigate('/');
   }
 
   return (
@@ -42,14 +45,16 @@ function ForgotPassword() {
             <TextInput.Input type='email' id='email' placeholder="Digite seu email cadastrado" />
           </TextInput.Root>
         </label>
-        <Button type='submit' className="mt-4">Enviar link</Button>
+        <Link to='/changepassword'>
+          <Button type='submit' className="mt-4">Enviar link</Button>
+        </Link>
       </form>
       <footer className="flex flex-col items-center gap-4 mt-8">
         <Text asChild size='sm'>
-          <a href="#" className="text-gray-400 underline hover:text-gray-200">Possui conta? Faça seu login</a>
+          <Link to="/" className="text-gray-400 underline hover:text-gray-200">Possui conta? Faça seu login</Link>
         </Text>
         <Text asChild size='sm'>
-          <a href="#" className="text-gray-400 underline hover:text-gray-200">Não possui conta? Crie uma agora</a>
+          <Link to="/register" className="text-gray-400 underline hover:text-gray-200">Não possui conta? Crie uma agora</Link>
         </Text>
       </footer>
     </div>

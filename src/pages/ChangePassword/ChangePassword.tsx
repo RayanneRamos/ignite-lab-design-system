@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useNavigate, Link } from 'react-router-dom';
 import { Lock } from "phosphor-react";
 import { FormEvent, useState } from "react";
 import { Button } from "../../components/Button/Button";
@@ -9,6 +10,7 @@ import { TextInput } from "../../components/TextInput/TextInput";
 
 function ChangePassword() {
   const [ isUserChangePassword, setIsUserChangePassword ] = useState(false);
+  const navigate = useNavigate();
 
   async function handleChangePassword(event: FormEvent) {
     event.preventDefault();
@@ -19,6 +21,7 @@ function ChangePassword() {
     });
 
     setIsUserChangePassword(true);
+    navigate('/');
   }
 
   return (
@@ -56,10 +59,10 @@ function ChangePassword() {
       </form>
       <footer className="flex flex-col items-center gap-4 mt-8">
         <Text asChild size='sm'>
-          <a href='#' className="text-gray-400 underline hover:text-gray-200">Tem conta? Faça login agora</a>
+          <Link to='/' className="text-gray-400 underline hover:text-gray-200">Tem conta? Faça login agora</Link>
         </Text>
         <Text asChild size='sm'>
-          <a href='#' className="text-gray-400 underline hover:text-gray-200">Não possui conta? Crie uma agora</a>
+          <Link to='/register' className="text-gray-400 underline hover:text-gray-200">Não possui conta? Crie uma agora</Link>
         </Text>
       </footer>
     </div>

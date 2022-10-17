@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Envelope, Lock } from "phosphor-react";
 import { FormEvent, useState } from "react";
+import { useNavigate, Link } from 'react-router-dom';
 import { Button } from "../../components/Button/Button";
 import { Heading } from "../../components/Heading/Heading";
 import { Logo } from "../../components/Logo/Logo";
@@ -9,6 +10,7 @@ import { TextInput } from "../../components/TextInput/TextInput";
 
 function Register() {
   const [ isUserRegister, setIsUserRegister ] = useState(false);
+  const navigate = useNavigate();
 
   async function handleRegister(event: FormEvent) {
     event.preventDefault();
@@ -20,6 +22,7 @@ function Register() {
     });
 
     setIsUserRegister(true);
+    navigate('/');
   }
 
   return (
@@ -66,10 +69,10 @@ function Register() {
       </form>
       <footer className="flex flex-col items-center gap-4 mt-8">
         <Text asChild size='sm'>
-          <a href='#' className="text-gray-400 underline hover:text-gray-200">Esqueceu sua senha?</a>
+          <Link to='/forgotpassword' className="text-gray-400 underline hover:text-gray-200">Esqueceu sua senha?</Link>
         </Text>
         <Text asChild size='sm'>
-          <a href='#' className="text-gray-400 underline hover:text-gray-200">Possui conta? Faça seu Login agora</a>
+          <Link to='/' className="text-gray-400 underline hover:text-gray-200">Possui conta? Faça seu Login agora</Link>
         </Text>
       </footer>
     </div>
