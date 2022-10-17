@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { SignIn } from './Signin';
+import { SignIn } from './SignIn';
 import { within, userEvent, waitFor } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 import { rest } from 'msw';

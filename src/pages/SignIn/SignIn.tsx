@@ -1,11 +1,12 @@
-import { Checkbox } from '../components/Checkbox';
-import { Envelope, Lock } from "phosphor-react";
-import { Button } from "../components/Button";
-import { Heading } from "../components/Heading";
-import { Text } from "../components/Text";
-import { TextInput } from "../components/TextInput";
-import { Logo } from "../Logo";
 import { FormEvent, useState } from 'react';
+import { Envelope, Lock } from "phosphor-react";
+import { Checkbox } from '../../components/Checkbox/Checkbox';
+import { Button } from '../../components/Button/Button';
+import { Heading } from '../../components/Heading/Heading';
+import { Text } from '../../components/Text/Text';
+import { TextInput } from '../../components/TextInput/TextInput';
+import { Logo } from '../../components/Logo/Logo';
+
 import axios from 'axios';
 
 function SignIn() {

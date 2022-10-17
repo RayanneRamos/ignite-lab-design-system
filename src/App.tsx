@@ -1,4 +1,4 @@
-import { SignIn } from './pages/Signin';
+import { SignIn } from './pages/SignIn/SignIn';
 import './styles/global.css';
 
 function App() {
