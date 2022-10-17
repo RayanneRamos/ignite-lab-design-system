@@ -63,8 +63,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
  - [x] Criar a página de Nova senha
  - [x] Criar o storybook da página de Nova senha
  - [ ] Fazer os testes na página de Nova senha
- - [ ] Criar a página de Registro
- - [ ] Criar o storybook da página de Registro
+ - [x] Criar a página de Registro
+ - [x] Criar o storybook da página de Registro
  - [ ] Fazer os testes na página de Registro
  - [ ] Validação dos campos do formulário
 
