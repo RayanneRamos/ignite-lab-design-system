@@ -60,8 +60,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
  - [x] Criar a página de Esqueceu a senha 
  - [x] Criar o storybook da página de Esqueceu a senha
  - [ ] Fazer os testes na página de Esqueceu a senha
- - [ ] Criar a página de Nova senha
- - [ ] Criar o storybook da página de Nova senha
+ - [x] Criar a página de Nova senha
+ - [x] Criar o storybook da página de Nova senha
  - [ ] Fazer os testes na página de Nova senha
  - [ ] Criar a página de Registro
  - [ ] Criar o storybook da página de Registro
