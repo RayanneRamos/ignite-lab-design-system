@@ -56,13 +56,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🔥 Desafios
 
- - [ ] Fazer os testes nos componentes
  - [x] Criar a página de Esqueceu a senha 
  - [x] Criar o storybook da página de Esqueceu a senha
- - [ ] Fazer os testes na página de Esqueceu a senha
+ - [x] Fazer os testes na página de Esqueceu a senha
  - [x] Criar a página de Nova senha
  - [x] Criar o storybook da página de Nova senha
- - [ ] Fazer os testes na página de Nova senha
+ - [x] Fazer os testes na página de Nova senha
  - [x] Criar a página de Registro
  - [x] Criar o storybook da página de Registro
  - [ ] Fazer os testes na página de Registro
