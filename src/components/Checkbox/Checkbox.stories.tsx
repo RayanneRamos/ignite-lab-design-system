@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { within, userEvent, waitFor } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { within, userEvent } from '@storybook/testing-library';
 import { Checkbox, CheckboxProps } from "./Checkbox";
 import { Text } from '../Text/Text';
 
@@ -21,17 +20,4 @@ export default {
   ],
 } as Meta<CheckboxProps>
 
-export const Default: StoryObj<CheckboxProps> = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    userEvent.click(canvas.getByRole('check'));
-
-    await waitFor(() => {
-      expect(canvas.getByText('Lembra-me de mim por 30 dias')).toBeInTheDocument();
-      expect(canvas.getByRole('check')).toBeInTheDocument();
-      expect(canvas.getByRole('check')).toHaveLength(1);
-      expect(canvas.getByRole('CheckboxPrimitive.Root')).toHaveLength(1);
-      expect(canvas.getByRole('CheckboxPrimitive.Indicator')).toHaveLength(1);
-    });
-  }
-};
+export const Default: StoryObj<CheckboxProps> = {};
