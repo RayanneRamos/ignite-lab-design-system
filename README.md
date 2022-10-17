@@ -57,8 +57,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 🔥 Desafios
 
  - [ ] Fazer os testes nos componentes
- - [ ] Criar a página de Esqueceu a senha 
- - [ ] Criar o storybook da página de Esqueceu a senha
+ - [x] Criar a página de Esqueceu a senha 
+ - [x] Criar o storybook da página de Esqueceu a senha
  - [ ] Fazer os testes na página de Esqueceu a senha
  - [ ] Criar a página de Nova senha
  - [ ] Criar o storybook da página de Nova senha
