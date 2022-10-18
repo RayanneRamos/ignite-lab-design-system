@@ -1,6 +1,9 @@
 import { FormEvent, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import { Envelope } from "phosphor-react";
 import { Button } from "../../components/Button/Button";
 import { Heading } from "../../components/Heading/Heading";
@@ -8,9 +11,22 @@ import { Logo } from "../../components/Logo/Logo";
 import { Text } from "../../components/Text/Text";
 import { TextInput } from "../../components/TextInput/TextInput";
 
+interface IFormInputs {
+  email: string;
+}
+
+const schema = yup.object({
+  email: yup.string().required('This field is required').email('The email is in the wrong format')
+}).required();
+
 function ForgotPassword() {
   const [ isUserForgotPassword, setIsUserForgotPassword ] = useState(false);
   const navigate = useNavigate();
+  const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
+    resolver: yupResolver(schema),
+    mode: 'onBlur',
+  });
+  const onSubmit = (data: IFormInputs) => console.log(data);
 
   async function handleForgotPassword(event: FormEvent) {
     event.preventDefault();
@@ -42,8 +58,9 @@ function ForgotPassword() {
             <TextInput.Icon>
               <Envelope />
             </TextInput.Icon>
-            <TextInput.Input type='email' id='email' placeholder="Digite seu email cadastrado" required />
+            <TextInput.Input type='email' id='email' placeholder="Digite seu email cadastrado" {...register('email')} onBlur={handleSubmit(onSubmit)} />
           </TextInput.Root>
+          <Text className='font-semibold text-red-300'>{errors.email?.message}</Text>
         </label>
         <Link to='/changepassword'>
           <Button type='submit' className="mt-4">Enviar link</Button>
