@@ -1,6 +1,9 @@
 import { FormEvent, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import { Envelope, Lock } from "phosphor-react";
 import { Checkbox } from '../../components/Checkbox/Checkbox';
 import { Button } from '../../components/Button/Button';
@@ -9,9 +12,24 @@ import { Text } from '../../components/Text/Text';
 import { TextInput } from '../../components/TextInput/TextInput';
 import { Logo } from '../../components/Logo/Logo';
 
+interface IFormInputs {
+  email: string;
+  password: string;
+}
+
+const schema = yup.object({
+  email: yup.string().required('This field is required').email('The email is in the wrong format'),
+  password: yup.string().required('This field is required')
+}).required();
+
 function SignIn() {
   const [ isUserSignedIn, setIsUserSignedIn ] = useState(false);
   const navigate = useNavigate();
+  const { register, handleSubmit, formState: {errors} } = useForm<IFormInputs>({
+    resolver: yupResolver(schema),
+    mode: 'onSubmit',
+  });
+  const onSubmit = (data: IFormInputs) => console.log(data);
 
   async function handleSignIn(event: FormEvent) {
     event.preventDefault();
@@ -44,8 +62,9 @@ function SignIn() {
             <TextInput.Icon>
               <Envelope />
             </TextInput.Icon>
-            <TextInput.Input type='email' id='email' placeholder='Digite seu e-mail' required />
+            <TextInput.Input type='email' id='email' placeholder='Digite seu e-mail' {...register('email')} />
           </TextInput.Root>
+          <Text className='font-semibold text-red-300'>{errors.password?.message}</Text>
         </label>
         <label htmlFor='password' className='flex flex-col gap-3'>
           <Text className='font-semibold'>Sua senha</Text>
@@ -53,14 +72,15 @@ function SignIn() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type='password' id='password' placeholder='************' required />
+            <TextInput.Input type='password' id='password' placeholder='************' {...register('password')} />
           </TextInput.Root>
+          <Text className='font-semibold text-red-300'>{errors.password?.message}</Text>
         </label>
         <label htmlFor='remember' className='flex items-center gap-2'>
           <Checkbox id='remember' />
           <Text size='sm' className='text-gray-200'>Lembrar de mim por 30 dias</Text>
         </label>
-        <Button type='submit' className='mt-4 '>Entrar na plataforma</Button>
+        <Button onClick={handleSubmit(onSubmit)} type='submit' className='mt-4 '>Entrar na plataforma</Button>
       </form>
       <footer className='flex flex-col items-center gap-4 mt-8'>
         <Text asChild size='sm'>
