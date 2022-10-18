@@ -42,7 +42,7 @@ function ForgotPassword() {
             <TextInput.Icon>
               <Envelope />
             </TextInput.Icon>
-            <TextInput.Input type='email' id='email' placeholder="Digite seu email cadastrado" />
+            <TextInput.Input type='email' id='email' placeholder="Digite seu email cadastrado" required />
           </TextInput.Root>
         </label>
         <Link to='/changepassword'>

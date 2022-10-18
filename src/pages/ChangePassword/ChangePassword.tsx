@@ -43,7 +43,7 @@ function ChangePassword() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type='password' id='password' placeholder="*********" />
+            <TextInput.Input type='password' id='password' placeholder="*********" required />
           </TextInput.Root>
         </label>
         <label htmlFor="confirmPassword" className="flex flex-col gap-3">
@@ -52,7 +52,7 @@ function ChangePassword() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type='password' id='confirmPassword' placeholder="*********" />
+            <TextInput.Input type='password' id='confirmPassword' placeholder="*********" required />
           </TextInput.Root>
         </label>
         <Button type='submit' className="mt-4">Mudar senha</Button>

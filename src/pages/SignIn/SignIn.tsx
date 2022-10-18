@@ -44,7 +44,7 @@ function SignIn() {
             <TextInput.Icon>
               <Envelope />
             </TextInput.Icon>
-            <TextInput.Input type='email' id='email' placeholder='Digite seu e-mail' />
+            <TextInput.Input type='email' id='email' placeholder='Digite seu e-mail' required />
           </TextInput.Root>
         </label>
         <label htmlFor='password' className='flex flex-col gap-3'>
@@ -53,7 +53,7 @@ function SignIn() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type='password' id='password' placeholder='************' />
+            <TextInput.Input type='password' id='password' placeholder='************' required />
           </TextInput.Root>
         </label>
         <label htmlFor='remember' className='flex items-center gap-2'>

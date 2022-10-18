@@ -44,7 +44,7 @@ function Register() {
             <TextInput.Icon>
               <Envelope />
             </TextInput.Icon>
-            <TextInput.Input type='email' id='email' placeholder="Digite seu e-mail" />
+            <TextInput.Input type='email' id='email' placeholder="Digite seu e-mail" required />
           </TextInput.Root>
         </label>
         <label htmlFor="password" className="flex flex-col gap-3">
@@ -53,7 +53,7 @@ function Register() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type='password' id='password' placeholder="*********" />
+            <TextInput.Input type='password' id='password' placeholder="*********" required />
           </TextInput.Root>
         </label>
         <label htmlFor="confirmPassword" className="flex flex-col gap-3">
@@ -62,7 +62,7 @@ function Register() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type='password' id='confirmPassword' placeholder="*********" />
+            <TextInput.Input type='password' id='confirmPassword' placeholder="*********" required />
           </TextInput.Root>
         </label>
         <Button type='submit' className="mt-4">Criar conta</Button>
