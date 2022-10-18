@@ -1,6 +1,9 @@
 import axios from "axios";
 import { Envelope, Lock } from "phosphor-react";
 import { FormEvent, useState } from "react";
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import { useNavigate, Link } from 'react-router-dom';
 import { Button } from "../../components/Button/Button";
 import { Heading } from "../../components/Heading/Heading";
@@ -8,9 +11,26 @@ import { Logo } from "../../components/Logo/Logo";
 import { Text } from "../../components/Text/Text";
 import { TextInput } from "../../components/TextInput/TextInput";
 
+interface IFormInputs {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+const schema = yup.object({
+  email: yup.string().required('The field is required').email('The email is in the wrong format'),
+  password: yup.string().required('The field is required'),
+  confirmPassword: yup.string().required('The field is required'),
+}).required();
+
 function Register() {
   const [ isUserRegister, setIsUserRegister ] = useState(false);
   const navigate = useNavigate();
+  const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
+    resolver: yupResolver(schema),
+    mode: 'all',
+  });
+  const onSubmit = (data: IFormInputs) => console.log(data);
 
   async function handleRegister(event: FormEvent) {
     event.preventDefault();
@@ -44,8 +64,9 @@ function Register() {
             <TextInput.Icon>
               <Envelope />
             </TextInput.Icon>
-            <TextInput.Input type='email' id='email' placeholder="Digite seu e-mail" required />
+            <TextInput.Input type='email' id='email' placeholder="Digite seu e-mail" {...register('email')} />
           </TextInput.Root>
+          <Text className="font-semibold text-red-300">{errors.email?.message}</Text>
         </label>
         <label htmlFor="password" className="flex flex-col gap-3">
           <Text className="font-semibold">Passwod</Text>
@@ -53,8 +74,9 @@ function Register() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type='password' id='password' placeholder="*********" required />
+            <TextInput.Input type='password' id='password' placeholder="*********" {...register('password')} />
           </TextInput.Root>
+          <Text className="font-semibold text-red-300">{errors.password?.message}</Text>
         </label>
         <label htmlFor="confirmPassword" className="flex flex-col gap-3">
           <Text className="font-semibold">Confirm Password</Text>
@@ -62,10 +84,11 @@ function Register() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type='password' id='confirmPassword' placeholder="*********" required />
+            <TextInput.Input type='password' id='confirmPassword' placeholder="*********" {...register('confirmPassword')} />
           </TextInput.Root>
+          <Text className="font-semibold text-red-300">{errors.confirmPassword?.message}</Text>
         </label>
-        <Button type='submit' className="mt-4">Criar conta</Button>
+        <Button onClick={handleSubmit(onSubmit)} type='submit' className="mt-4">Criar conta</Button>
       </form>
       <footer className="flex flex-col items-center gap-4 mt-8">
         <Text asChild size='sm'>
