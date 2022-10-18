@@ -66,7 +66,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
  - [x] Criar o storybook da página de Registro
  - [x] Fazer os testes na página de Registro
  - [x] Criando as rotas da aplicação
- - [ ] Validação dos campos do formulário
+ - [x] Validação dos campos do formulário
 
 ## 📝 License
 
