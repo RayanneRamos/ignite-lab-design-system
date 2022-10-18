@@ -25,7 +25,7 @@ const schema = yup.object({
 function SignIn() {
   const [ isUserSignedIn, setIsUserSignedIn ] = useState(false);
   const navigate = useNavigate();
-  const { register, handleSubmit, formState: {errors} } = useForm<IFormInputs>({
+  const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
     mode: 'onSubmit',
   });

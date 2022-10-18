@@ -2,15 +2,33 @@ import axios from "axios";
 import { useNavigate, Link } from 'react-router-dom';
 import { Lock } from "phosphor-react";
 import { FormEvent, useState } from "react";
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import { Button } from "../../components/Button/Button";
 import { Heading } from "../../components/Heading/Heading";
 import { Logo } from "../../components/Logo/Logo";
 import { Text } from "../../components/Text/Text";
 import { TextInput } from "../../components/TextInput/TextInput";
 
+interface IFormInputs {
+  password: string;
+  confirmPassword: string;
+}
+
+const schema = yup.object({
+  password: yup.string().required('This field is required'),
+  confirmPassword: yup.string().required('This field is required')
+}).required();
+
 function ChangePassword() {
   const [ isUserChangePassword, setIsUserChangePassword ] = useState(false);
   const navigate = useNavigate();
+  const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
+    resolver: yupResolver(schema),
+    mode: 'onSubmit',
+  });
+  const onSubmit = (data: IFormInputs) => console.log(data);
 
   async function handleChangePassword(event: FormEvent) {
     event.preventDefault();
@@ -43,8 +61,9 @@ function ChangePassword() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type='password' id='password' placeholder="*********" required />
+            <TextInput.Input type='password' id='password' placeholder="*********" {...register('password')} />
           </TextInput.Root>
+          <Text className="font-semibold text-red-300">{errors.password?.message}</Text>
         </label>
         <label htmlFor="confirmPassword" className="flex flex-col gap-3">
           <Text className="font-semibold">Cofirme a nova senha</Text>
@@ -52,10 +71,11 @@ function ChangePassword() {
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
-            <TextInput.Input type='password' id='confirmPassword' placeholder="*********" required />
+            <TextInput.Input type='password' id='confirmPassword' placeholder="*********" {...register('confirmPassword')} />
           </TextInput.Root>
+          <Text className="font-semibold text-red-300">{errors.confirmPassword?.message}</Text>
         </label>
-        <Button type='submit' className="mt-4">Mudar senha</Button>
+        <Button onClick={handleSubmit(onSubmit)} type='submit' className="mt-4">Mudar senha</Button>
       </form>
       <footer className="flex flex-col items-center gap-4 mt-8">
         <Text asChild size='sm'>
