@@ -27,7 +27,7 @@ function SignIn() {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
-    mode: 'onSubmit',
+    mode: 'all',
   });
   const onSubmit = (data: IFormInputs) => console.log(data);
 
