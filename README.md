@@ -1,12 +1,14 @@
+<h1 align='center'>Design System</h1>
+
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/43352880/195912327-da286092-2192-4f50-ad97-3039cd6fd99c.png' alt='Iginite Lab Design System' />
+</p>
+
 <p  align='center'>
   <img src='https://img.shields.io/badge/license-MIT-%23835afd' alt='License' />
   <img src='https://img.shields.io/badge/forks-MIT-%23835afd' alt='Forks' />
   <img src='https://img.shields.io/badge/stars-MIT-%23835afd' alt='Stars' />
 </p>
-
-<h1 align='center'>
-  <img src='https://user-images.githubusercontent.com/43352880/195912327-da286092-2192-4f50-ad97-3039cd6fd99c.png' alt='Iginite Lab Design System' />
-</h1>
 
 <br>
 
