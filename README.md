@@ -21,7 +21,15 @@
   - [x] Aula 03 | Testando e automatizando
   - [x] Aula Extra | After Ignite Lab
 
-## 🧪 Technologies
+## 🌟 Funcionalidades
+
+1. **Página de Esqueceu a Senha**: Criação da interface para o usuário solicitar a recuperação de senha, inclusão de validação de campo (e-mail) e feedback visual para erros, implementação de testes para garantir a funcionalidade e usabilidade e storybook para visualização isolada da página.
+2. **Página de Nova Senha**: Página onde o usuário pode criar uma nova senha, validação de senha, incluindo requisitos mínimos de segurança, implementação de testes para assegurar que a página está funcionando corretamente e storybook para visualização isolada da página.
+3. **Página de Registro**: Criação da página para registro de novos usuários, com campos para nome, e-mail e senha, validação de todos os campos do formulário de registro, implementação de testes para garantir que os dados sejam corretamente capturados e storybook para visualização isolada da página.
+4. **Rotas da Aplicação**: Definição das rotas necessárias para navegar entre as páginas de Esqueceu a Senha, Nova Senha, e Registro e configuração de redirecionamento após ações como o envio do e-mail de recuperação ou registro de usuário.
+5. **Validação dos Campos do Formulário**: Validação dos campos de entrada de dados (e-mail, senha, nome) em todas as páginas de autenticação e exibição de mensagens de erro claras quando os dados inseridos não atendem aos critérios exigidos.
+
+## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
